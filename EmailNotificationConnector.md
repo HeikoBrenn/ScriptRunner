@@ -1,4 +1,4 @@
-***Configuring the Mail Notification Connector***
+# Configuring the Mail Notification Connector
 
 How to configure the ScriptRunner E-mail Notification Connector to send e-mail notifications
 Please note that an administrative PowerShell console at the ScriptRunner Service host is required to run the cmdlets of the ScriptRunnerSettings module.
@@ -12,6 +12,10 @@ The e-mail notification can be configured with the ScriptRunner PowerShell modul
 **Get-AsrEMailNotificationConnector**
 
 Gets the current settings of the ScriptRunner Email Notification Connector
+
+**Test-AsrEMailNotificationConnector**
+
+Tests the current Email Notification Connector settings
 
 **Set-AsrEMailNotificationConnector**
 
@@ -33,6 +37,11 @@ UseMailboxAsSender - The mailbox of the user is used. Its e-mail address is used
 Sender - Sender e-mail address if UseMailboxSender=no
 
 Restart - Restarts the ScriptRunner service to apply changes immediately
+
+**Example:**
+
+ Set-AsrEMailNotificationConnector -On -Host exchange.company.net -Port 587 -UseTLS yes -Sender administrator@company.net -Restart
+
 
 
 The receivers as well as the trigger of a notification message, can be defined for each action in the action wizard. To do this, select the action and click the EDIT button in the Action Bar.
